@@ -11,9 +11,9 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <ServicesSection />
-      <div id="testimonials">
+      {/* <div id="testimonials">
         <TestimonialsSection />
-      </div>
+      </div> */}
       <ContactSection />
       <Footer />
     </main>
