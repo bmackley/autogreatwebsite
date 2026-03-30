@@ -16,11 +16,11 @@ export function HeroSection() {
       <div className="relative max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
         <div className="space-y-4">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-light tracking-tight text-balance">
-            Transform your business with <span className="font-normal text-accent">nocode,</span> <span className="font-normal text-accent">lowcode,</span> <span className="font-normal text-accent">or full-code</span>
+            Supercharge your business with <span className="font-normal text-accent">AI implementations,</span> <span className="font-normal text-accent">automation,</span> and <span className="font-normal text-accent">integrations</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-pretty">
-            Accelerate growth without the headaches. We build custom applications and automation solutions that
-            scale with your business.
+            From intelligent chatbots and document processing to workflow automation and seamless integrations — we
+            build AI solutions that scale with your business.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export function HeroSection() {
           </Button>
         </div>
 
-        <div className="pt-16 text-sm text-muted-foreground">Trusted by growing businesses with 20+ employees</div>
+        <div className="pt-16 text-sm text-muted-foreground">Trusted by growing businesses with 15+ employees</div>
       </div>
     </section>
   )

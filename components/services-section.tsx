@@ -1,39 +1,44 @@
 "use client"
 
 import { Card } from "@/components/ui/card"
-import { Code2, Zap, Database, Smartphone, Blocks, Workflow } from "lucide-react"
+import { Brain, Search, Workflow, Blocks, Code2, Database } from "lucide-react"
 
 const services = [
   {
-    icon: Code2,
-    title: "No-Code Development",
+    icon: Brain,
+    title: "AI Implementations",
     description:
-      "Build powerful applications without writing traditional code. Perfect for rapid prototyping and MVPs.",
+      "Custom AI solutions including chatbots, document processing, natural language processing, and content generation tailored to your business needs.",
   },
   {
-    icon: Zap,
-    title: "Low-Code Solutions",
-    description: "Combine visual development with custom code for maximum flexibility and performance.",
-  },
-  {
-    icon: Database,
-    title: "Database Architecture",
-    description: "Expert setup and optimization with Supabase, Airtable, and other modern data platforms.",
-  },
-  {
-    icon: Smartphone,
-    title: "Custom App Development",
-    description: "Tailored applications built with V0, React, and Noloco that perfectly fit your workflow.",
-  },
-  {
-    icon: Blocks,
-    title: "System Integration",
-    description: "Connect your tools and automate workflows across your entire tech stack.",
+    icon: Search,
+    title: "AI-Powered Knowledge Bases",
+    description:
+      "Intelligent search and retrieval systems (RAG) that let your AI draw from your own documents and data to deliver accurate, context-aware answers.",
   },
   {
     icon: Workflow,
-    title: "Business Automation",
-    description: "Eliminate repetitive tasks and streamline operations with intelligent automation.",
+    title: "Workflow Automation",
+    description:
+      "Eliminate repetitive tasks and streamline operations with intelligent automation that connects your tools and processes end-to-end.",
+  },
+  {
+    icon: Blocks,
+    title: "Integrations",
+    description:
+      "Seamlessly connect Zoom, Google Workspace, Merge.dev, N8N, and more to unify your tech stack and keep data flowing.",
+  },
+  {
+    icon: Code2,
+    title: "No-Code & Low-Code Development",
+    description:
+      "Build powerful applications without traditional code. Perfect for rapid prototyping, MVPs, and internal tools.",
+  },
+  {
+    icon: Database,
+    title: "Database & Backend",
+    description:
+      "Expert architecture and optimization with Supabase, Airtable, and other modern data platforms to power your applications.",
   },
 ]
 
@@ -46,7 +51,7 @@ export function ServicesSection() {
             Our <span className="font-normal">Expertise</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Comprehensive solutions designed to accelerate your digital transformation
+            AI-powered solutions designed to accelerate your digital transformation
           </p>
         </div>
 
@@ -73,13 +78,19 @@ export function ServicesSection() {
         <div className="mt-20 text-center">
           <p className="text-lg text-muted-foreground mb-6">Technologies we specialize in</p>
           <div className="flex flex-wrap items-center justify-center gap-8 text-foreground/60">
+            <span className="text-2xl font-normal text-foreground/80">N8N</span>
+            <span className="text-2xl">•</span>
+            <span className="text-2xl font-normal text-foreground/80">Claude</span>
+            <span className="text-2xl">•</span>
+            <span className="text-2xl font-normal text-foreground/80">LangChain</span>
+            <span className="text-2xl">•</span>
             <span className="text-2xl font-light">V0</span>
             <span className="text-2xl">•</span>
             <span className="text-2xl font-light">Supabase</span>
             <span className="text-2xl">•</span>
-            <span className="text-2xl font-light">React</span>
-            <span className="text-2xl">•</span>
             <span className="text-2xl font-light">Airtable</span>
+            <span className="text-2xl">•</span>
+            <span className="text-2xl font-light">React</span>
             <span className="text-2xl">•</span>
             <span className="text-2xl font-light">Noloco</span>
           </div>

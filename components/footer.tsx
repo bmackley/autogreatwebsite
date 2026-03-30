@@ -8,28 +8,29 @@ export function Footer() {
               AutoGreat <span className="text-accent font-normal">Consultants</span>
             </h3>
             <p className="text-primary-foreground/70 leading-relaxed">
-              Transforming businesses with innovative no-code and low-code solutions.
+              Transforming businesses with AI implementations and intelligent automation.
             </p>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-medium text-accent">Services</h4>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li>No-Code Development</li>
-              <li>Low-Code Solutions</li>
-              <li>Database Architecture</li>
-              <li>Business Automation</li>
+              <li>AI Implementations</li>
+              <li>RAG Architectures</li>
+              <li>Workflow Automation</li>
+              <li>Integrations</li>
             </ul>
           </div>
 
           <div className="space-y-4">
             <h4 className="font-medium text-accent">Technologies</h4>
             <ul className="space-y-2 text-primary-foreground/70">
+              <li>N8N</li>
+              <li>Claude</li>
+              <li>LangChain</li>
               <li>V0</li>
               <li>Supabase</li>
-              <li>Airtable</li>
               <li>React</li>
-              <li>Noloco</li>
             </ul>
           </div>
         </div>

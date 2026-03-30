@@ -39,10 +39,16 @@ export function Header() {
             Services
           </button>
           <button
-            onClick={() => document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("case-studies")?.scrollIntoView({ behavior: "smooth" })}
             className="text-foreground/70 hover:text-foreground transition-colors"
           >
-            Testimonials
+            Case Studies
+          </button>
+          <button
+            onClick={() => document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" })}
+            className="text-foreground/70 hover:text-foreground transition-colors"
+          >
+            Pricing
           </button>
           <Button
             size="sm"

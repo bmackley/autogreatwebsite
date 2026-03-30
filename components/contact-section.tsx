@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
+import { Send, Calendar } from "lucide-react"
+import { toast } from "sonner"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -15,17 +17,37 @@ export function ContactSection() {
     company: "",
     message: "",
   })
+  const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // In production, this would send to an API
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
+    setLoading(true)
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          from_name: "AutoGreat Website",
+          subject: `New inquiry from ${formData.name} at ${formData.company}`,
+          ...formData,
+        }),
+      })
+
+      const result = await response.json()
+      if (!result.success) throw new Error()
+
+      setSubmitted(true)
+      toast.success("Message sent! We'll get back to you within 24 hours.")
       setFormData({ name: "", email: "", company: "", message: "" })
-    }, 3000)
+      setTimeout(() => setSubmitted(false), 5000)
+    } catch {
+      toast.error("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -43,10 +65,10 @@ export function ContactSection() {
             Let's <span className="font-normal">talk</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Ready to transform your business? Schedule a free consultation and discover what's possible.
+            Ready to transform your business? Get in touch and discover what's possible.
           </p>
         </div>
-{/* 
+
         <Card className="p-8 md:p-12 bg-card border-border/50 shadow-xl">
           {submitted ? (
             <div className="text-center py-12 space-y-4 animate-fade-in">
@@ -126,30 +148,29 @@ export function ContactSection() {
               <Button
                 type="submit"
                 size="lg"
+                disabled={loading}
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg py-6 rounded-full group"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
                 <Send className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </form>
           )}
-        </Card> */}
-        <div className="flex justify-center">
+        </Card>
 
-        <a 
-    href="https://calendar.app.google/uX26b81f1vPw6MLV7" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  > <Button
-                type="button"
-                size="sm"
-                className="mx-auto bg-accent text-accent-foreground hover:bg-accent/90 text-lg py-6 rounded-full group cursor-pointer"
-              >
-                Schedule a Consultation
-                
-              </Button>
-              </a>
-              </div>
+        <div className="text-center mt-8">
+          <p className="text-muted-foreground mb-3">Prefer to schedule directly?</p>
+          <a
+            href="https://calendar.app.google/uX26b81f1vPw6MLV7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" className="rounded-full group">
+              <Calendar className="mr-2 h-4 w-4" />
+              Book a Consultation
+            </Button>
+          </a>
+        </div>
       </div>
     </section>
   )
